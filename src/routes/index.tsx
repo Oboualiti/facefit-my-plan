@@ -427,12 +427,21 @@ function FNPill({ icon, label }: { icon: React.ReactNode; label: string }) {
   );
 }
 
-function FNExercise({ img, name, time }: { img: string; name: string; time: string }) {
+function FNExerciseRow({ img, name, time, done }: { img: string; name: string; time: string; done?: boolean }) {
   return (
-    <div className="rounded-2xl bg-surface/60 border border-border-soft p-2 flex flex-col items-center">
-      <img src={img} alt="" loading="lazy" width={120} height={120} className="w-full aspect-square rounded-xl object-cover" />
-      <p className="mt-1.5 text-[11px] font-medium text-center leading-tight line-clamp-1">{name}</p>
-      <p className="text-[10px] text-muted-foreground">{time}</p>
+    <div className="flex items-center gap-3 p-3">
+      <img src={img} alt="" loading="lazy" width={48} height={48} className="w-12 h-12 rounded-xl object-cover" />
+      <div className="flex-1 min-w-0">
+        <p className="font-semibold text-[14px] leading-tight truncate">{name}</p>
+        <p className="text-[11px] text-muted-foreground mt-0.5">{time}</p>
+      </div>
+      {done ? (
+        <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
+          <Check className="w-4 h-4 text-primary-foreground" strokeWidth={3} />
+        </div>
+      ) : (
+        <div className="w-7 h-7 rounded-full border-2 border-muted-foreground/40" />
+      )}
     </div>
   );
 }
