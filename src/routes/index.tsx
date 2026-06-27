@@ -22,7 +22,7 @@ import {
   BatteryFull,
 } from "lucide-react";
 
-import aiFace from "@/assets/ai-face.jpg";
+import aiFace from "@/assets/ai-face.png";
 import muscleChest from "@/assets/muscle-chest.jpg";
 import muscleBack from "@/assets/muscle-back.jpg";
 import muscleShoulders from "@/assets/muscle-shoulders.jpg";
