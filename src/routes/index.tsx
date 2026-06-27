@@ -20,6 +20,10 @@ import {
   Signal,
   Wifi,
   BatteryFull,
+  Move,
+  SignalHigh,
+  Ban,
+  Scan,
 } from "lucide-react";
 
 import aiFace from "@/assets/ai-face.png";
@@ -30,6 +34,10 @@ import mealBreakfast from "@/assets/meal-breakfast.jpg";
 import mealLunch from "@/assets/meal-lunch.jpg";
 import mealDinner from "@/assets/meal-dinner.jpg";
 import mealSnack from "@/assets/meal-snack.jpg";
+import exerciseChinTuck from "@/assets/exercise-chin-tuck.jpg";
+import exerciseNeckMobility from "@/assets/exercise-neck-mobility.jpg";
+import exerciseJaw from "@/assets/exercise-jaw.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -111,6 +119,44 @@ function MyPlan() {
             </div>
           </div>
         </section>
+
+        {/* Face & Neck Routine */}
+        <section className="px-4 mt-5">
+          <div className="rounded-3xl bg-card border border-border-soft p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-16 h-16 rounded-2xl bg-primary-soft/40 border border-primary/30 flex items-center justify-center shrink-0">
+                <Scan className="w-7 h-7 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="font-semibold text-[18px] leading-tight">Face &amp; Neck Routine</h4>
+                <p className="text-xs text-muted-foreground mt-1">8 minutes • Daily</p>
+                <p className="text-[13px] text-muted-foreground mt-2 leading-snug">
+                  Improve posture, reduce tension, and support a healthier facial appearance.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 flex items-center gap-2 flex-wrap">
+              <FNPill icon={<Move className="w-3.5 h-3.5" />} label="6 exercises" />
+              <FNPill icon={<SignalHigh className="w-3.5 h-3.5" />} label="Beginner" />
+              <FNPill icon={<Ban className="w-3.5 h-3.5" />} label="No equipment" />
+            </div>
+
+            <div className="mt-4 grid grid-cols-4 gap-2">
+              <FNExercise img={exerciseChinTuck} name="Chin Tuck" time="45s" />
+              <FNExercise img={exerciseNeckMobility} name="Neck Mobility" time="45s" />
+              <FNExercise img={exerciseJaw} name="Jaw Relaxation" time="45s" />
+              <div className="rounded-2xl bg-surface/60 border border-border-soft flex flex-col items-center justify-center py-3">
+                <span className="text-primary font-semibold text-sm">+3</span>
+                <span className="text-[11px] text-muted-foreground mt-0.5">more</span>
+              </div>
+            </div>
+
+            <PrimaryCta label="Start Routine" />
+          </div>
+        </section>
+
+
 
         {/* Today's Plan */}
         <div className="px-5 pt-6 pb-3 flex items-center justify-between">
@@ -372,3 +418,23 @@ function NavItem({
     </button>
   );
 }
+
+function FNPill({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border-soft bg-surface/60 text-[12px] text-muted-foreground">
+      <span className="text-primary">{icon}</span>
+      {label}
+    </span>
+  );
+}
+
+function FNExercise({ img, name, time }: { img: string; name: string; time: string }) {
+  return (
+    <div className="rounded-2xl bg-surface/60 border border-border-soft p-2 flex flex-col items-center">
+      <img src={img} alt="" loading="lazy" width={120} height={120} className="w-full aspect-square rounded-xl object-cover" />
+      <p className="mt-1.5 text-[11px] font-medium text-center leading-tight line-clamp-1">{name}</p>
+      <p className="text-[10px] text-muted-foreground">{time}</p>
+    </div>
+  );
+}
+
