@@ -20,6 +20,10 @@ import {
   Signal,
   Wifi,
   BatteryFull,
+  Move,
+  SignalHigh,
+  Ban,
+  Scan,
 } from "lucide-react";
 
 import aiFace from "@/assets/ai-face.png";
@@ -30,6 +34,10 @@ import mealBreakfast from "@/assets/meal-breakfast.jpg";
 import mealLunch from "@/assets/meal-lunch.jpg";
 import mealDinner from "@/assets/meal-dinner.jpg";
 import mealSnack from "@/assets/meal-snack.jpg";
+import exerciseChinTuck from "@/assets/exercise-chin-tuck.jpg";
+import exerciseNeckMobility from "@/assets/exercise-neck-mobility.jpg";
+import exerciseJaw from "@/assets/exercise-jaw.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
