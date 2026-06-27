@@ -418,3 +418,23 @@ function NavItem({
     </button>
   );
 }
+
+function FNPill({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border-soft bg-surface/60 text-[12px] text-muted-foreground">
+      <span className="text-primary">{icon}</span>
+      {label}
+    </span>
+  );
+}
+
+function FNExercise({ img, name, time }: { img: string; name: string; time: string }) {
+  return (
+    <div className="rounded-2xl bg-surface/60 border border-border-soft p-2 flex flex-col items-center">
+      <img src={img} alt="" loading="lazy" width={120} height={120} className="w-full aspect-square rounded-xl object-cover" />
+      <p className="mt-1.5 text-[11px] font-medium text-center leading-tight line-clamp-1">{name}</p>
+      <p className="text-[10px] text-muted-foreground">{time}</p>
+    </div>
+  );
+}
+
