@@ -142,14 +142,13 @@ function MyPlan() {
               <FNPill icon={<Ban className="w-3.5 h-3.5" />} label="No equipment" />
             </div>
 
-            <div className="mt-4 grid grid-cols-4 gap-2">
-              <FNExercise img={exerciseChinTuck} name="Chin Tuck" time="45s" />
-              <FNExercise img={exerciseNeckMobility} name="Neck Mobility" time="45s" />
-              <FNExercise img={exerciseJaw} name="Jaw Relaxation" time="45s" />
-              <div className="rounded-2xl bg-surface/60 border border-border-soft flex flex-col items-center justify-center py-3">
-                <span className="text-primary font-semibold text-sm">+3</span>
-                <span className="text-[11px] text-muted-foreground mt-0.5">more</span>
-              </div>
+            <div className="mt-4 rounded-2xl bg-surface/60 border border-border-soft divide-y divide-[color:var(--border-soft)]">
+              <FNExerciseRow img={exerciseChinTuck} name="Chin Tuck" time="45s" done />
+              <FNExerciseRow img={exerciseNeckMobility} name="Neck Mobility" time="45s" done />
+              <FNExerciseRow img={exerciseJaw} name="Jaw Relaxation" time="45s" done />
+              <FNExerciseRow img={exerciseJaw} name="Tongue Posture Reminder" time="30s" done />
+              <FNExerciseRow img={exerciseChinTuck} name="Cheek & Facial Relaxation" time="1 min" />
+              <FNExerciseRow img={exerciseNeckMobility} name="Posture Reset" time="2 min" />
             </div>
 
             <PrimaryCta label="Start Routine" />
