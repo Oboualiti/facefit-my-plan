@@ -88,9 +88,9 @@ function MyPlan() {
               src={aiFace}
               alt=""
               aria-hidden="true"
-              className="absolute -right-6 top-1/2 -translate-y-1/2 h-[140%] w-auto object-contain pointer-events-none select-none"
+              className="absolute right-0 top-0 h-full w-auto object-contain pointer-events-none select-none"
             />
-            <div className="absolute inset-y-0 left-0 w-[55%] bg-gradient-to-r from-background via-background/80 to-transparent pointer-events-none" />
+            <div className="absolute inset-y-0 left-0 w-[60%] bg-gradient-to-r from-background via-background/70 to-transparent pointer-events-none" />
             <div className="relative max-w-[62%]">
               <h2 className="text-[22px] font-semibold leading-tight">Your AI Plan</h2>
               <p className="text-[13px] text-muted-foreground mt-1.5 leading-snug">
